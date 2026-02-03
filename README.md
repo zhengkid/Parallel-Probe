@@ -1,9 +1,12 @@
 # Parallel-Probe: Towards Efficient Parallel Thinking via 2D Probing
 ![Overview of Parallel-Probe framework](fig/Overview.jpg)
 
-Parallel-Probe is a training-free online controller for efficient parallel reasoning in LLMs.
+🚀 **Parallel-Probe** is a training-free controller for efficient parallel reasoning in large language models.
 
-It introduces **2D Probing**, a lightweight black-box interface that exposes global width–depth dynamics of parallel reasoning, and leverages these dynamics to jointly optimize reasoning width and depth via adaptive pruning and consensus-based early stopping.
+Using **2D Probing**, we reveal global width–depth dynamics of parallel trajectories, uncovering key inefficiencies such as non-monotonic scaling, heterogeneous branch lengths, and early consensus.
+
+Built on these insights, Parallel-Probe adaptively prunes branches and enables early stopping, achieving superior accuracy–efficiency trade-offs with reduced latency and token cost.
+
 
 
 ---
