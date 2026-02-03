@@ -1,0 +1,8 @@
+Solver,Strategy,Acc,Cost,Seq_Cost,Std_Acc,n,warmup_steps,probe_burst,solver_n,solver_window_size,solver_threshold,num_chains,K,T,eps_inter,eps_intra,max_steps,prune_patience,warm_up
+GreedySolver,ConvergenceProbeStrategy,70.97,12068,12068,0,14.0,0.0,1.0,,,,,,,,,,,
+MajorityVoteSolver,FullReadStrategy,80.37,910813,30091,0,,,,64.0,,,,,,,,,,
+ESCSolver,FullReadStrategy,80.37,459359,84694,0,,,,64.0,8.0,,,,,,,,,
+ASCSolver,FullReadStrategy,80.37,226033,20731,0,,,,64.0,,0.95,,,,,,,,
+MajorityVoteSolver,ConvergenceProbeStrategy,76.67,773352,25617,0,14.0,0.0,1.0,64.0,,,,,,,,,,
+GreedySolver,ParallelESTPruning,80.3,730225,21196,0,,,,,,,64.0,1000.0,40.0,5.0,5.0,100.0,7.0,15.0
+GreedySolver,ParallelESTPruningBurstMajorityOnActiveBranches,81.47,730781,20324,0,,,1.0,,,,64.0,5.0,40.0,5.0,5.0,100.0,7.0,15.0

@@ -1,0 +1,41 @@
+\begin{table*}[t]
+\centering\small
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{l l ccc ccc ccc ccc}
+\toprule
+Method & Type & \multicolumn{3}{c}{AIME24} & \multicolumn{3}{c}{AIME25} & \multicolumn{3}{c}{HMMT25} & \multicolumn{3}{c}{Avg.} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
+& & Acc. $\uparrow$ & SeqTokens $\downarrow$ & Tokens $\downarrow$ & Acc. $\uparrow$ & SeqTokens $\downarrow$ & Tokens $\downarrow$ & Acc. $\uparrow$ & SeqTokens $\downarrow$ & Tokens $\downarrow$ & Acc. $\uparrow$ & SeqTokens $\downarrow$ & Tokens $\downarrow$ \\
+\midrule
+\multicolumn{14}{l}{\textit{Base Model: Qwen3-0.6B-128}} \\
+\midrule
+SC @ 64 & Parallel & 21.4 & 32.7k & 1008.6k & 28.9 & 31.1k & 890.5k & 18.1 & 31.0k & 937.8k & 22.8 & 31.6k  & 945.7k  \\
+ASC & Seq. & 21.4 & 805.5k & 805.5k & 28.9 & 653.8k & 653.8k & 18.1 & 580.8k & 580.8k & 22.8 & 680.0k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+2051.1\%})} & 680.0k \textsuperscript{\scriptsize(\textcolor{red}{-28.1\%})} \\
+ESC & Hybrid & 21.4 & 192.9k & 986.7k & 28.9 & 171.8k & 868.8k & 18.1 & 179.5k & 923.9k & 22.8 & 181.4k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+473.9\%})} & 926.5k \textsuperscript{\scriptsize(\textcolor{red}{-2.0\%})} \\
+SC @ 64 + SAC & Parallel & 19.5 & 26.8k & 820.7k & 25.4 & 27.2k & 819.4k & 17.4 & 26.3k & 808.2k & 20.7 & 26.8k \textsuperscript{\scriptsize(\textcolor{red}{-15.3\%})} & 816.1k \textsuperscript{\scriptsize(\textcolor{red}{-13.7\%})} \\
+Parallel-Probe & Parallel & 21.8 & 20.8k & 773.8k & 29.7 & 19.6k & 697.8k & 18.5 & 20.5k & 734.5k & 23.3 & 20.3k \textsuperscript{\scriptsize(\textcolor{red}{-35.8\%})} & 735.3k \textsuperscript{\scriptsize(\textcolor{red}{-22.2\%})} \\
+\midrule
+\multicolumn{14}{l}{\textit{Base Model: Qwen3-1.7B-128}} \\
+\midrule
+SC @ 64 & Parallel & 72.5 & 31.4k & 1025.8k & 44.4 & 30.0k & 1054.1k & 24.2 & 32.4k & 1132.9k & 47.0 & 31.3k  & 1070.9k  \\
+ASC & Seq. & 72.3 & 482.6k & 482.6k & 44.4 & 600.9k & 600.9k & 24.2 & 586.3k & 586.3k & 47.0 & 556.6k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+1679.7\%})} & 556.6k \textsuperscript{\scriptsize(\textcolor{red}{-48.0\%})} \\
+ESC & Hybrid & 72.5 & 170.4k & 909.2k & 44.4 & 160.6k & 913.8k & 24.2 & 174.9k & 1014.2k & 47.0 & 168.6k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+439.2\%})} & 945.7k \textsuperscript{\scriptsize(\textcolor{red}{-11.7\%})} \\
+SC @ 64 + SAC & Parallel & 64.5 & 27.3k & 868.2k & 40.0 & 26.4k & 909.0k & 21.4 & 26.9k & 889.1k & 42.0 & 26.9k \textsuperscript{\scriptsize(\textcolor{red}{-14.1\%})} & 888.8k \textsuperscript{\scriptsize(\textcolor{red}{-17.0\%})} \\
+Parallel-Probe & Parallel & 66.0 & 19.6k & 745.4k & 44.4 & 20.6k & 776.6k & 20.3 & 22.4k & 859.7k & 43.6 & 20.9k \textsuperscript{\scriptsize(\textcolor{red}{-33.3\%})} & 793.9k \textsuperscript{\scriptsize(\textcolor{red}{-25.9\%})} \\
+\midrule
+\multicolumn{14}{l}{\textit{Base Model: Qwen3-4B-128}} \\
+\midrule
+SC @ 64 & Parallel & 80.0 & 29.3k & 886.8k & 76.6 & 30.5k & 1088.1k & 43.6 & 33.9k & 1168.3k & 66.8 & 31.2k  & 1047.7k  \\
+ASC & Seq. & 80.0 & 214.2k & 214.2k & 76.6 & 325.1k & 325.1k & 43.6 & 487.3k & 487.3k & 66.7 & 342.2k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+995.4\%})} & 342.2k \textsuperscript{\scriptsize(\textcolor{red}{-67.3\%})} \\
+ESC & Hybrid & 80.0 & 98.9k & 528.9k & 76.6 & 137.0k & 793.3k & 43.6 & 174.0k & 990.2k & 66.8 & 136.6k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+337.3\%})} & 770.8k \textsuperscript{\scriptsize(\textcolor{red}{-26.4\%})} \\
+SC @ 64 + SAC & Parallel & 80.0 & 24.8k & 782.2k & 73.3 & 27.9k & 995.4k & 41.9 & 27.1k & 863.0k & 65.1 & 26.6k \textsuperscript{\scriptsize(\textcolor{red}{-14.8\%})} & 880.2k \textsuperscript{\scriptsize(\textcolor{red}{-16.0\%})} \\
+Parallel-Probe & Parallel & 79.7 & 19.2k & 688.9k & 76.1 & 22.2k & 806.0k & 44.7 & 21.5k & 872.3k & 66.8 & 20.9k \textsuperscript{\scriptsize(\textcolor{red}{-33.0\%})} & 789.0k \textsuperscript{\scriptsize(\textcolor{red}{-24.7\%})} \\
+\midrule
+\multicolumn{14}{l}{\textit{Base Model: Qwen3-8B-128}} \\
+\midrule
+SC @ 64 & Parallel & 80.4 & 30.1k & 910.8k & 76.7 & 30.7k & 1124.4k & 48.9 & 34.8k & 1267.0k & 68.6 & 31.9k  & 1100.7k  \\
+ASC & Seq. & 80.4 & 226.0k & 226.0k & 76.7 & 406.2k & 406.2k & 48.8 & 565.1k & 565.1k & 68.6 & 399.1k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+1152.7\%})} & 399.1k \textsuperscript{\scriptsize(\textcolor{red}{-63.7\%})} \\
+ESC & Hybrid & 80.4 & 84.7k & 459.4k & 76.7 & 132.4k & 793.1k & 48.9 & 184.5k & 1062.1k & 68.6 & 133.9k \textsuperscript{\scriptsize(\textcolor{green!80!black}{+320.1\%})} & 771.5k \textsuperscript{\scriptsize(\textcolor{red}{-29.9\%})} \\
+SC @ 64 + SAC & Parallel & 76.7 & 25.6k & 773.4k & 70.2 & 28.1k & 998.5k & 42.7 & 28.5k & 896.8k & 63.2 & 27.4k \textsuperscript{\scriptsize(\textcolor{red}{-14.0\%})} & 889.5k \textsuperscript{\scriptsize(\textcolor{red}{-19.2\%})} \\
+Parallel-Probe & Parallel & 81.5 & 20.3k & 730.8k & 76.9 & 21.9k & 846.7k & 47.1 & 22.4k & 897.2k & 68.5 & 21.6k \textsuperscript{\scriptsize(\textcolor{red}{-32.3\%})} & 824.9k \textsuperscript{\scriptsize(\textcolor{red}{-25.1\%})} \\
+\bottomrule \end{tabular} \end{adjustbox} \end{table*}
